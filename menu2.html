@@ -31,9 +31,9 @@
 
                         <!-- MEATS COLUMN-->
                         <div class="columns">
-                            <div class="column is-two-fifths">
+                            <div class="column is-one-third ">
                                 <div class="container ">
-                                    <div class="card meatContainer">
+                                    <div class="card meatContainer ">
                                         <header class="card-header">
                                             <p class="card-header-title is-centered is-size-5">
                                                 Meat
@@ -41,9 +41,9 @@
                                             <a href="#" class="card-header-icon" aria-label="more options">
                                             </a>
                                         </header>
-                                        <div class="card-content meatTpng  ">
+                                        <div class="card-content meatTpng">
                                             <div class="content ">
-                                                <div class="control has-text-left">
+                                                <div class="control ">
 
                                                     <label class="checkbox">
                                                         <input type="checkbox" value="anchovies">
@@ -56,17 +56,17 @@
                                                     </label>
                                                     <br>
                                                     <label class="checkbox">
-                                                        <input type="checkbox">
+                                                        <input type="checkbox" value="bbq chicken">
                                                         BBQ Chicken
                                                     </label>
                                                     <br>
-                                                    <label class="checkbox" value="beef">
-                                                        <input type="checkbox" value="bbq chicken">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" value="beef">
                                                         Beef
                                                     </label>
                                                     <br>
-                                                    <label class="checkbox" value="cajun chicken">
-                                                        <input type="checkbox">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" value="cajun chicken">
                                                         Cajun Chicken
                                                     </label>
                                                     <br>
@@ -76,7 +76,7 @@
                                                     </label>
                                                     <br>
                                                     <label class="checkbox">
-                                                        <input type="checkbox">
+                                                        <input type="checkbox" value="chorizo">
                                                         Chorizo
                                                     </label>
                                                     <br>
@@ -175,7 +175,6 @@
                                                         <input type="checkbox" value="venison">
                                                         Venison
                                                     </label>
-
                                                     <br>
                                                 </div></a>
                                                 <br>
@@ -199,11 +198,11 @@
                                         </header>
                                         <div class="card-content nonMeatTopng ">
                                             <div class="content ">
-                                                <div class="control has-text-left">
+                                                <div class="control ">
 
                                                     <!-- First Row (Non-Meats)-->
                                                     <div class="columns">
-                                                        <div class="column">
+                                                        <div class="column is-half-mobile">
                                                             <label class="checkbox">
                                                                 <input type="checkbox" value="alfalfa sprouts">
                                                                 Alfalfa Sprouts
@@ -295,7 +294,7 @@
                                                             </label>
                                                             <br>
                                                             <label class="checkbox">
-                                                                <input type="checkbox" value="lettucs">
+                                                                <input type="checkbox" value="lettuce">
                                                                 Lettuce
                                                             </label>
                                                             <br>
@@ -338,24 +337,24 @@
 
 
                                                         <!-- Second Row (Non-Meats)-->
-                                                        <div class="columns">
-                                                            <div class="column">
+                                                        
+                                                            <div class="column is-half-mobile">
+                                                                <!-- <br> -->
                                                                 <label class="checkbox">
-                                                                    <br>
                                                                     <input type="checkbox" value="peanuts">
                                                                     Peanuts
                                                                 </label>
                                                                 <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="peas">
-                                                                    Peas
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="pistachio">
-                                                                    Pistachio
-                                                                </label>
-                                                                <br>
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" value="peas">
+                                                                        Peas
+                                                                    </label>
+                                                                    <br>
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" value="pistachio">
+                                                                        Pistachio
+                                                                    </label>
+                                                                    <br>
                                                                 <label class="checkbox">
                                                                     <input type="checkbox" value="portobello mushrooms">
                                                                     Portobello Mushrooms
@@ -441,7 +440,6 @@
                                                                     Zucchini
                                                                 </label>
                                                                 <br>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -454,7 +452,7 @@
                         <!-- CONFIRM ORDER BUTTON-->
                         <br>
                         <div class="has-text-centered">
-                            <button class="button" type="submit"><strong>Pick Your Toppings &nbsp; </strong><i
+                            <button class="button" type="submit"><strong>Review Your Order &nbsp; </strong><i
                                     class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
@@ -462,6 +460,15 @@
 
     </section>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript">
+        $(":checkbox").change(function() {
+            if(this.checked) {
+                console.log(this.value);
+            }
+        });
+    </script>
 </body>
 
 </html>
