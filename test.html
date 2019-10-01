@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 50%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="email" placeholder="validate your email"></textarea>
+    <br>
+    <button id="validate">Validate</button>
+    <br>
+    <br>
+    <div id="map"></div>
+
+    <script async defer
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBzqA6_qeZKge4y_W1QIGBp4cjqCMi30aQ&callback=initMap">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript">
+      $("#validate").on("click",function(){
+        let email = $("#email").val();
+        let settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://pozzad-email-validator.p.rapidapi.com/emailvalidator/validateEmail/"+email,
+          "method": "GET",
+          "headers": {
+            "x-rapidapi-host": "pozzad-email-validator.p.rapidapi.com",
+            "x-rapidapi-key": "6f16f230aemsh31b9ddf6fefd32fp16bb58jsned0ecf0fe85c"
+          }
+        }
+
+        $.ajax(settings).done(function (response) {
+          $("#email").val('');
+          if (response.isValid) {
+            alert("Email is Valid");
+          }
+          else
+            alert("Email is NOT Valid. Please enter another one.");
+          console.log(response);
+        });
+      });
+      let map, infoWindow;
+      let current;
+      let mapOptions = {
+        center: {lat: 34.062, lng: -118.446},
+        zoom: 16
+      };
+      function initMap() {
+        let pizzaria = new google.maps.LatLng(34.062, -118.446);
+        let directionsService = new google.maps.DirectionsService();
+        let directionsRenderer = new google.maps.DirectionsRenderer();
+        let info = '"Eat Our Pizza" Pizzaria';
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        infoWindow = new google.maps.InfoWindow;
+        directionsRenderer.setMap(map);
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            let pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            console.log(pos);
+            let marker = new google.maps.Marker({
+            position: {
+              lat: 34.062, lng: -118.446
+            },
+            map: map
+          });
+            attachSecretMessage(marker, info);
+            infoWindow.setPosition(pos);
+            current = new google.maps.LatLng(pos.lat, pos.lng);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+            calcRoute();
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+        function calcRoute() {
+          let origin = pizzaria;
+          let destination = current;
+          console.log(current);
+          let service = new google.maps.DistanceMatrixService();
+          let n = Date.now() + 1200000; // 20 minute buffer for pizza making
+          let N = new Date(n);
+          console.log(N);
+          service.getDistanceMatrix(
+            {
+              origins: [origin],
+              destinations: [destination],
+              travelMode: 'DRIVING',
+              drivingOptions: {
+                departureTime: N,
+                trafficModel: 'pessimistic'
+              },
+              unitSystem: google.maps.UnitSystem.IMPERIAL,
+            }, callback);
+
+          function callback(response, status) {
+            if (status == 'OK') {
+              let time = response.rows[0].elements[0].duration_in_traffic.text;
+              console.log(response);
+              console.log("Destination is "+response.destinationAddresses[0]);
+              console.log("Origin is "+response.originAddresses[0]);
+              console.log("Distance from Pizzaria is "+response.rows[0].elements[0].distance.text);
+              console.log("Estimated travel time is "+time + " plus 20 mins to make pizza.");
+            }
+          }
+        }
+      }
+
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+      function attachSecretMessage(marker, secretMessage) {
+        let infowindow = new google.maps.InfoWindow({
+          content: secretMessage
+        });
+
+        marker.addListener('click', function() {
+          infowindow.open(marker.get('map'), marker);
+        });
+      }
+    </script>
+  </body>
+</html>
