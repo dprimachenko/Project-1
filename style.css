@@ -1,21 +1,21 @@
 
 
 .meatTpng {
-    padding-left: 200px;
+    padding-left: 100px;
 }
 
 .nonMeatTopng {
-    padding-left: 100px; 
-    padding-right: 130px;
+    padding-left: 80px; 
+    padding-right: 40px;
     
 }
 
 .meatContainer {
-    height: 750px;
+    height: 100%;
 }
 
 .nonMeatContainer {
-    height: 750px;
+    height: 100%;
 }
 
 .crustContainer {
@@ -29,3 +29,4 @@
 .sauceContainer {
     height: 250px;
 }
+
