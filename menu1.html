@@ -94,17 +94,17 @@
                                 <div class="content sizeContent ">
                                     <div class="control has-text-centered">
                                         <label class="radio">
-                                            <input type="radio" name="size choice">
+                                            <input type="radio" name="size choice" id="small">
                                             Small (12") <i class="far fa-circle fa-5x"></i>&nbsp;
                                         </label>
             
                                         <label class="radio">
-                                            <input type="radio" name="size choice">
+                                            <input type="radio" name="size choice" id="medium">
                                             Medium (14") <i class="far fa-circle fa-6x"></i>&nbsp;
                                         </label>
             
                                         <label class="radio">
-                                            <input type="radio" name="size choice">
+                                            <input type="radio" name="size choice" id="large">
                                             Large (18") <i class="far fa-circle fa-7x"></i>
                                         </label>
                                     </div></a>
@@ -133,22 +133,22 @@
                                                 
                                                 <!--CRUST CHOICES-->
                                                 <label class="radio">
-                                                    <input type="radio" name="crust choice">
+                                                    <input type="radio" name="crust choice" id="thin">
                                                     Thin
                                                 </label>
                                                 <br>
                                                 <label class="radio">
-                                                    <input type="radio" name="crust choice">
+                                                    <input type="radio" name="crust choice" id="regular">
                                                     Regular
                                                 </label>
                                                 <br>
                                                 <label class="radio">
-                                                    <input type="radio" name="crust choice">
+                                                    <input type="radio" name="crust choice" id="deep-dish">
                                                     Deep Dish
                                                 </label>
                                                 <br>
                                                 <label class="radio0">
-                                                    <input type="radio" name="crust choice">
+                                                    <input type="radio" name="crust choice" id="gluten-free">
                                                     Gluten Free
                                                 </label>
                                             </div></a>
@@ -177,22 +177,22 @@
                                                 
                                                 <!--CHEESE CHOICES-->
                                                 <label class="radio">
-                                                    <input type="radio" name="cheese choice">
+                                                    <input type="radio" name="cheese choice" id="no-cheese">
                                                     No Cheese
                                                 </label>
                                                 <br>
                                                 <label class="radio">
-                                                    <input type="radio" name="cheese choice">
+                                                    <input type="radio" name="cheese choice" id="light-cheese">
                                                     Light Cheese
                                                 </label>
                                                 <br>
                                                 <label class="radio">
-                                                    <input type="radio" name="cheese choice">
+                                                    <input type="radio" name="cheese choice" id="medium-cheese">
                                                     Medium Cheese
                                                 </label>
                                                 <br>
                                                 <label class="radio">
-                                                    <input type="radio" name="cheese choice">
+                                                    <input type="radio" name="cheese choice" id="extra-cheese">
                                                     Extra Cheese
                                                 </label>
                                             </div></a>
@@ -218,27 +218,27 @@
                                             <div class="control has-text-left">
                                                 <!--SAUCE CHOICES-->
                                                 <label class="radio">
-                                                    <input type="radio" name="sauce choice">
+                                                    <input type="radio" name="sauce choice" id="tomato">
                                                     Tomato
                                                 </label>
                                                 <br>
                                                 <label class="radio">
-                                                    <input type="radio" name="sauce choice">
+                                                    <input type="radio" name="sauce choice" id="bbq">
                                                     BBQ
                                                 </label>
                                                 <br>
                                                 <label class="radio">
-                                                    <input type="radio" name="sauce choice">
+                                                    <input type="radio" name="sauce choice" id="alfredo">
                                                     Alfredo
                                                 </label>
                                                 <br>
                                                 <label class="radio">
-                                                    <input type="radio" name="sauce choice">
+                                                    <input type="radio" name="sauce choice" id="chocolate">
                                                     Chocolate
                                                 </label>
                                                 <br>
                                                 <label class="radio">
-                                                    <input type="radio" name="sauce choice">
+                                                    <input type="radio" name="sauce choice" id="nutella">
                                                     Nutella
                                                 </label>
                                             </div></a>
@@ -250,12 +250,23 @@
                         </div>
                     </div>
                     <div class="has-text-centered">
-                        <button class="button toppingBtn has-background-danger headerText header is-size-4" type="submit"><strong>Pick Your Toppings &nbsp; </strong><i
-                                class="fas fa-arrow-right"></i></button>
+                        <button class="button toppingBtn has-background-danger headerText header is-size-4" type="submit" onclick="window.open('menu2.html', '_self')"><strong>Pick Your Toppings &nbsp; </strong><i class="fas fa-arrow-right"></i></button>
                     </div>
                     <br>
             
                 </section>
+                <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+                <script type="text/javascript">
+                    $(":radio").change(function() {
+                        if(this.checked) {
+                            console.log(this.id);
+                        }
+                    });
+                    $(".button").on("click",function(){
+                        
+                    });
+                </script>
             </body>
             
         </div>
