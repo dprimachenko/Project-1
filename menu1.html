@@ -258,13 +258,58 @@
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
                 <script type="text/javascript">
-                    $(":radio").change(function() {
-                        if(this.checked) {
-                            console.log(this.id);
+                    let sauce;
+                    let cheese;
+                    let crust;
+                    let size;
+                    $(document).ready(function(){
+                        let savedSauce = localStorage.getItem("sauce");
+                        sauce = savedSauce;
+                        $("#"+savedSauce).prop("checked", true);
+                        let savedCheese = localStorage.getItem("cheese");
+                        cheese = savedCheese;
+                        $("#"+savedCheese).prop("checked", true);
+                        let savedCrust = localStorage.getItem("crust");
+                        crust = savedCrust;
+                        $("#"+savedCrust).prop("checked", true);
+                        let savedSize = localStorage.getItem("size");
+                        size = savedSize;
+                        $("#"+savedSize).prop("checked", true);
+                    });
+                    // $(":radio").change(function() {
+                    //     if(this.checked) {
+                    //         console.log(this.id);
+                    //     }
+                    // });
+                    $("input[name='sauce choice']").change(function() {
+                        if (this.checked) {
+                            sauce = this.id;
+                            console.log(sauce);
                         }
                     });
-                    $(".button").on("click",function(){
-                        
+                    $("input[name='cheese choice']").change(function() {
+                        if (this.checked) {
+                            cheese = this.id;
+                            console.log(cheese);
+                        }
+                    });
+                    $("input[name='crust choice']").change(function() {
+                        if (this.checked) {
+                            crust = this.id;
+                            console.log(crust);
+                        }
+                    });
+                    $("input[name='size choice']").change(function() {
+                        if (this.checked) {
+                            size = this.id;
+                            console.log(size);
+                        }
+                    });
+                    $(".toppingBtn").on("click",function(){
+                        localStorage.setItem("size",size);
+                        localStorage.setItem("crust",crust);
+                        localStorage.setItem("cheese",cheese);
+                        localStorage.setItem("sauce",sauce);
                     });
                 </script>
             </body>
