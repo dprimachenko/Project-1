@@ -1,199 +1,277 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eat Our Pizza!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-        <link rel="stylesheet" href="style.css">
+    <link rel='icon' href='Pizzacon.ico' type='image/x-icon' />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+    <title>Eat Our Pizza Pizzeria</title>
 </head>
 
 <body>
-    <section class="section">
-        
-        <!-- PIZZA SIZE -->
-        <div class="container">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title is-centered is-size-5">
-                        How BIG do you want it?
-                    </p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
-                    </a>
-                </header>
 
-                <div class="card-content  ">
-                    <div class="content ">
-                        <div class="control has-text-centered">
-                            <label class="radio">
-                                <input type="radio" name="size choice">
-                                Small (12") <i class="far fa-circle fa-5x"></i>&nbsp;
-                            </label>
+    <!-- Navbar start -->
 
-                            <label class="radio">
-                                <input type="radio" name="size choice">
-                                Medium (14") <i class="far fa-circle fa-6x"></i>&nbsp;
-                            </label>
+    <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
 
-                            <label class="radio">
-                                <input type="radio" name="size choice">
-                                Large (18") <i class="far fa-circle fa-7x"></i>
-                            </label>
-                        </div></a>
-                        <br>
-                    </div>
-                </div>
+            <p class="navbar-item">
+                <span class="icon is-medium"><i class="fas fa-pizza-slice" aria-hidden="true"></i></span>
+            </p>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+
+                <a class="navbar-item">
+                    Home
+                </a>
+
+                <a class="navbar-item">
+                    Order Online
+                </a>
+
+                <a class="navbar-item">
+                    Menu
+                </a>
+
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item is-size-1 has-text-weight-bold headerText">
+                    Eat Our Pizza Pizzeria
+                </p>
+
+
+
             </div>
         </div>
-        <br>
+    </nav>
 
+    <!-- Navbar End -->
 
-        <!-- CRUST -->
-        <div class="columns">
-            <div class="column">
-                <div class="container">
-                    <div class="card crustContainer">
-                        <header class="card-header">
-                            <p class="card-header-title is-centered is-size-5">
-                                Crust
-                            </p>
-                            <a href="#" class="card-header-icon" aria-label="more options">
-                            </a>
-                        </header>
-                        <div class="card-content  ">
-                            <div class="content ">
-                                <div class="control has-text-centered">
-                                    
-                                    <!--CRUST CHOICES-->
-                                    <label class="radio">
-                                        <input type="radio" name="crust choice">
-                                        Thin
-                                    </label>
-                                    <br>
-                                    <label class="radio">
-                                        <input type="radio" name="crust choice">
-                                        Regular
-                                    </label>
-                                    <br>
-                                    <label class="radio">
-                                        <input type="radio" name="crust choice">
-                                        Deep Dish
-                                    </label>
-                                    <br>
-                                    <label class="radio0">
-                                        <input type="radio" name="crust choice">
-                                        Gluten Free
-                                    </label>
-                                </div></a>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-           
-            <!-- CHEESE -->
-            <div class="column">
-                <div class="container">
-                    <div class="card cheeseContainer">
-                        <header class="card-header">
-                            <p class="card-header-title is-centered is-size-5">
-                                How cheesy? &nbsp; <i class="fas fa-cheese fa-2x"></i>
-                            </p>
-                            <a href="#" class="card-header-icon" aria-label="more options">
-                            </a>
-                        </header>
-                        <div class="card-content ">
-                            <div class="content ">
-                                <div class="control has-text-centered">
-                                    
-                                    
-                                    <!--CHEESE CHOICES-->
-                                    <label class="radio">
-                                        <input type="radio" name="cheese choice">
-                                        No Cheese
-                                    </label>
-                                    <br>
-                                    <label class="radio">
-                                        <input type="radio" name="cheese choice">
-                                        Light Cheese
-                                    </label>
-                                    <br>
-                                    <label class="radio">
-                                        <input type="radio" name="cheese choice">
-                                        Medium Cheese
-                                    </label>
-                                    <br>
-                                    <label class="radio">
-                                        <input type="radio" name="cheese choice">
-                                        Extra Cheese
-                                    </label>
-                                </div></a>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-2by1">
+                <img src="https://i.imgur.com/VUEGlFp.jpg" alt="Placeholder image">
+            </figure>
+        </div>
+        <div class="card-content is-overlay has-text-light">
+            <span class="is-size2 has-text-weight-bold"></span>
+            <body>
+                <section class="section">
+                    
+                    <!-- PIZZA SIZE -->
+                    <div class="container">
+                        <div class="card">
+                            <header class="card-header has-background-danger">
+                                <p class="card-header-title is-centered is-size-3 headerText header">
+                                    How BIG do you want it?
+                                </p>
+                                
+                            </header>
             
-           <!--SAUCE -->
-            <div class="column">
-                <div class="container">
-                    <div class="card sauceContainer">
-                        <header class="card-header">
-                            <p class="card-header-title is-centered is-size-5">
-                                Choose Your Sauce!
-                            </p>
-                            <a href="#" class="card-header-icon" aria-label="more options">
-                            </a>
-                        </header>
-                        <div class="card-content  ">
-                            <div class="content ">
-                                <div class="control has-text-centered">
-                                    <!--SAUCE CHOICES-->
-                                    <label class="radio">
-                                        <input type="radio" name="sauce choice">
-                                        Tomato
-                                    </label>
+                            <div class="card-content  ">
+                                <div class="content sizeContent ">
+                                    <div class="control has-text-centered">
+                                        <label class="radio">
+                                            <input type="radio" name="size choice">
+                                            Small (12") <i class="far fa-circle fa-5x"></i>&nbsp;
+                                        </label>
+            
+                                        <label class="radio">
+                                            <input type="radio" name="size choice">
+                                            Medium (14") <i class="far fa-circle fa-6x"></i>&nbsp;
+                                        </label>
+            
+                                        <label class="radio">
+                                            <input type="radio" name="size choice">
+                                            Large (18") <i class="far fa-circle fa-7x"></i>
+                                        </label>
+                                    </div></a>
                                     <br>
-                                    <label class="radio">
-                                        <input type="radio" name="sauce choice">
-                                        BBQ
-                                    </label>
-                                    <br>
-                                    <label class="radio">
-                                        <input type="radio" name="sauce choice">
-                                        Alfredo
-                                    </label>
-                                    <br>
-                                    <label class="radio">
-                                        <input type="radio" name="sauce choice">
-                                        Chocolate
-                                    </label>
-                                    <br>
-                                    <label class="radio">
-                                        <input type="radio" name="sauce choice">
-                                        Nutella
-                                    </label>
-                                </div></a>
-                                <br>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <br>
+            
+            
+                    <!-- CRUST -->
+                    <div class="columns">
+                        <div class="column">
+                            <div class="container">
+                                <div class="card crustContainer">
+                                    <header class="card-header has-background-danger">
+                                        <p class="card-header-title is-centered is-size-3 headerText header">
+                                            Crust
+                                        </p>
+                                        
+                                    </header>
+                                    <div class="card-content  ">
+                                        <div class="content crustContent ">
+                                            <div class="control has-text-left">
+                                                
+                                                <!--CRUST CHOICES-->
+                                                <label class="radio">
+                                                    <input type="radio" name="crust choice">
+                                                    Thin
+                                                </label>
+                                                <br>
+                                                <label class="radio">
+                                                    <input type="radio" name="crust choice">
+                                                    Regular
+                                                </label>
+                                                <br>
+                                                <label class="radio">
+                                                    <input type="radio" name="crust choice">
+                                                    Deep Dish
+                                                </label>
+                                                <br>
+                                                <label class="radio0">
+                                                    <input type="radio" name="crust choice">
+                                                    Gluten Free
+                                                </label>
+                                            </div></a>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                       
+                        <!-- CHEESE -->
+                        <div class="column">
+                            <div class="container">
+                                <div class="card cheeseContainer">
+                                    <header class="card-header has-background-danger">
+                                        <p class="card-header-title is-centered is-size-3 headerText header">
+                                            How cheesy? &nbsp; <i class="fas fa-cheese fa-2x"></i>
+                                        </p>
+                                       
+                                    </header>
+                                    <div class="card-content ">
+                                        <div class="content cheeseContent ">
+                                            <div class="control has-text-left">
+                                                
+                                                
+                                                <!--CHEESE CHOICES-->
+                                                <label class="radio">
+                                                    <input type="radio" name="cheese choice">
+                                                    No Cheese
+                                                </label>
+                                                <br>
+                                                <label class="radio">
+                                                    <input type="radio" name="cheese choice">
+                                                    Light Cheese
+                                                </label>
+                                                <br>
+                                                <label class="radio">
+                                                    <input type="radio" name="cheese choice">
+                                                    Medium Cheese
+                                                </label>
+                                                <br>
+                                                <label class="radio">
+                                                    <input type="radio" name="cheese choice">
+                                                    Extra Cheese
+                                                </label>
+                                            </div></a>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       <!--SAUCE -->
+                        <div class="column">
+                            <div class="container">
+                                <div class="card sauceContainer">
+                                    <header class="card-header has-background-danger">
+                                        <p class="card-header-title is-centered is-size-3 headerText header">
+                                            Choose Your Sauce!
+                                        </p>
+                                      
+                                    </header>
+                                    <div class="card-content  ">
+                                        <div class="content sauceContent ">
+                                            <div class="control has-text-left">
+                                                <!--SAUCE CHOICES-->
+                                                <label class="radio">
+                                                    <input type="radio" name="sauce choice">
+                                                    Tomato
+                                                </label>
+                                                <br>
+                                                <label class="radio">
+                                                    <input type="radio" name="sauce choice">
+                                                    BBQ
+                                                </label>
+                                                <br>
+                                                <label class="radio">
+                                                    <input type="radio" name="sauce choice">
+                                                    Alfredo
+                                                </label>
+                                                <br>
+                                                <label class="radio">
+                                                    <input type="radio" name="sauce choice">
+                                                    Chocolate
+                                                </label>
+                                                <br>
+                                                <label class="radio">
+                                                    <input type="radio" name="sauce choice">
+                                                    Nutella
+                                                </label>
+                                            </div></a>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="has-text-centered">
+                        <button class="button toppingBtn has-background-danger headerText header is-size-4" type="submit"><strong>Pick Your Toppings &nbsp; </strong><i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <br>
+            
+                </section>
+            </body>
+            
         </div>
-        <div class="has-text-centered">
-            <button class="button" type="submit"><strong>Pick Your Toppings &nbsp; </strong><i
-                    class="fas fa-arrow-right"></i></button>
-        </div>
-        <br>
 
-    </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>

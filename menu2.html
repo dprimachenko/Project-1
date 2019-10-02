@@ -1,474 +1,553 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eat Our Pizza!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-
+    <link rel='icon' href='Pizzacon.ico' type='image/x-icon' />
+    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+    <title>Eat Our Pizza Pizzeria</title>
 </head>
 
 <body>
-    <section class="section">
 
-        <!-- TOPPINGS INTRO -->
-        <div class="container">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title is-centered is-size-5">
-                        TOPPINGS
-                    </p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
-                    </a>
-                </header>
+    <!-- Navbar start -->
 
-                <div class="card-content  ">
-                    <div class="content ">
+    <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+
+            <p class="navbar-item">
+                <span class="icon is-medium"><i class="fas fa-pizza-slice" aria-hidden="true"></i></span>
+            </p>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+
+                <a class="navbar-item">
+                    Home
+                </a>
+
+                <a class="navbar-item">
+                    Order Online
+                </a>
+
+                <a class="navbar-item">
+                    Menu
+                </a>
+
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item"></p>
+                <p class="navbar-item has-text-weight-bold headerText is-size-1">
+                    Eat Our Pizza Pizzeria
+                </p>
 
 
-                        <!-- MEATS COLUMN-->
-                        <div class="columns">
-                            <div class="column is-one-third ">
-                                <div class="container ">
-                                    <div class="card meatContainer ">
-                                        <header class="card-header">
-                                            <p class="card-header-title is-centered is-size-5">
-                                                Meat
-                                            </p>
-                                            <a href="#" class="card-header-icon" aria-label="more options">
-                                            </a>
-                                        </header>
-                                        <div class="card-content meatTpng">
-                                            <div class="content ">
-                                                <div class="control ">
 
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="anchovies">
-                                                        Anchovies
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="bacon">
-                                                        Bacon
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="bbq chicken">
-                                                        BBQ Chicken
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="beef">
-                                                        Beef
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="cajun chicken">
-                                                        Cajun Chicken
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="chicken tikka">
-                                                        Chicken Tikka
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="chorizo">
-                                                        Chorizo
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="crayfish">
-                                                        Crayfish
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="duck">
-                                                        Duck
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="ham">
-                                                        Ham
-                                                    </label>
-                                                    <br>
+            </div>
+        </div>
+    </nav>
 
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="lobster">
-                                                        Lobster
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="meatballs">
-                                                        Meatballs
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="oysters">
-                                                        Oysters
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="pepperoni">
-                                                        Pepperoni
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="prawns">
-                                                        Prawns
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="prosciutto">
-                                                        Prosciutto
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="salami">
-                                                        Salami
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="salmon">
-                                                        Salmon
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="sausage">
-                                                        Sausage
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="serrano ham">
-                                                        Serrano Ham
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="shrimps">
-                                                        Shrimps
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="smoked salmon">
-                                                        Smoked Salmon
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="squid">
-                                                        Squid
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="tuna">
-                                                        Tuna
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="turkey">
-                                                        Turkey
-                                                    </label>
-                                                    <br>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="venison">
-                                                        Venison
-                                                    </label>
-                                                    <br>
-                                                </div></a>
-                                                <br>
-                                            </div>
-                                        </div>
+    <!-- Navbar End -->
 
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Non - MEATS-->
-                            <div class="column">
-                                <div class="container">
-                                    <div class="card nonMeatContainer">
-                                        <header class="card-header">
-                                            <p class="card-header-title is-centered is-size-5">
-                                                Non-Meat 
-                                            </p>
-                                            <a href="#" class="card-header-icon" aria-label="more options">
-                                            </a>
-                                        </header>
-                                        <div class="card-content nonMeatTopng ">
-                                            <div class="content ">
-                                                <div class="control ">
-
-                                                    <!-- First Row (Non-Meats)-->
-                                                    <div class="columns">
-                                                        <div class="column is-half-mobile">
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="alfalfa sprouts">
-                                                                Alfalfa Sprouts
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="almonds">
-                                                                Almonds
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="apple slices">
-                                                                Apple Slices
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="artichoke hearts">
-                                                                Artichoke Hearts
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="avocado">
-                                                                Avocado
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="baby leeks">
-                                                                Baby Leeks
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="banana">
-                                                                Banana
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="black beans">
-                                                                Black Beans
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="blueberries">
-                                                                Blueberries
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="broccoli">
-                                                                Broccoli
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="capers">
-                                                                Capers
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="carrot">
-                                                                Carrot
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="cherry tomatoes">
-                                                                Cherry Tomatoes
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="chocolate chips">
-                                                                Chocolate Chips
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="dried tomatoes">
-                                                                Dried Tomatoes
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="eggplant">
-                                                                Eggplant
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="green peppers">
-                                                                Green Peppers
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="kalamata olives">
-                                                                Kalamata Olives
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="lettuce">
-                                                                Lettuce
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="marshmallow">
-                                                                Marshmallow
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="m&ms">
-                                                                M&M’s
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="mushrooms">
-                                                                Mushrooms
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="onions">
-                                                                Onions
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="olives">
-                                                                Olives
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="oreo crumbles">
-                                                                Oreo Crumbles
-                                                            </label>
-                                                            <br>
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="peanut butter chips">
-                                                                Peanut Butter Chips
-                                                            </label>
+    <div class="card">
+        <div class="card-image ">
+            <figure class="image is-2by1 pizzaBackground">
+                <img src="https://i.imgur.com/VUEGlFp.jpg" alt="Placeholder image" ">
+            </figure>
+        </div>
+        <div class="card-content is-overlay has-text-light">
+            <span class="is-size2 has-text-weight-bold"></span>
+           
+            <body>
+                <section class="section">
+            
+                    <!-- TOPPINGS INTRO -->
+                    <div class="container ">
+                        <div class="card has-background-grey-lighter">
+                            <header class="card-header has-background-danger">
+                                <p class="card-header-title is-centered is-size-3 headerText header">
+                                    TOPPINGS
+                                </p>
+                                
+                            </header>
+            
+                            <div class="card-content  ">
+                                <div class="content ">
+            
+            
+                                    <!-- MEATS COLUMN-->
+                                    <div class="columns">
+                                        <div class="column is-one-third ">
+                                            <div class="container ">
+                                                <div class="card meatContainer ">
+                                                    <header class="card-header has-background-danger">
+                                                        <p class="card-header-title is-centered is-size-3 headerText header">
+                                                            Meat
+                                                        </p>
+                                                        
+                                                    </header>
+                                                    <div class="card-content meatTpng">
+                                                        <div class="content ">
+                                                            <div class="control ">
+            
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="anchovies">
+                                                                    Anchovies
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="bacon">
+                                                                    Bacon
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="bbq chicken">
+                                                                    BBQ Chicken
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="beef">
+                                                                    Beef
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="cajun chicken">
+                                                                    Cajun Chicken
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="chicken tikka">
+                                                                    Chicken Tikka
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="chorizo">
+                                                                    Chorizo
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="crayfish">
+                                                                    Crayfish
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="duck">
+                                                                    Duck
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="ham">
+                                                                    Ham
+                                                                </label>
+                                                                <br>
+            
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="lobster">
+                                                                    Lobster
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="meatballs">
+                                                                    Meatballs
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="oysters">
+                                                                    Oysters
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="pepperoni">
+                                                                    Pepperoni
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="prawns">
+                                                                    Prawns
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="prosciutto">
+                                                                    Prosciutto
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="salami">
+                                                                    Salami
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="salmon">
+                                                                    Salmon
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="sausage">
+                                                                    Sausage
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="serrano ham">
+                                                                    Serrano Ham
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="shrimps">
+                                                                    Shrimps
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="smoked salmon">
+                                                                    Smoked Salmon
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="squid">
+                                                                    Squid
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="tuna">
+                                                                    Tuna
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="turkey">
+                                                                    Turkey
+                                                                </label>
+                                                                <br>
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" value="venison">
+                                                                    Venison
+                                                                </label>
+                                                                <br>
+                                                            </div></a>
                                                             <br>
                                                         </div>
-
-
-                                                        <!-- Second Row (Non-Meats)-->
+                                                    </div>
+            
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <!--Non - MEATS-->
+                                        <div class="column">
+                                            <div class="container">
+                                                <div class="card nonMeatContainer">
+                                                    <header class="card-header has-background-danger">
+                                                        <p class="card-header-title is-centered is-size-3 headerText header">
+                                                            Non-Meat 
+                                                        </p>
                                                         
-                                                            <div class="column is-half-mobile">
-                                                                <!-- <br> -->
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="peanuts">
-                                                                    Peanuts
-                                                                </label>
-                                                                <br>
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox" value="peas">
-                                                                        Peas
-                                                                    </label>
-                                                                    <br>
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox" value="pistachio">
-                                                                        Pistachio
-                                                                    </label>
-                                                                    <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="portobello mushrooms">
-                                                                    Portobello Mushrooms
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="red beans">
-                                                                    Red beans
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="red onions">
-                                                                    Red onions
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="red peppers">
-                                                                    Red peppers
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="reeses cups">
-                                                                    Reese's Peanut Butter Cups
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="roasted garlic">
-                                                                    Roasted Garlic
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="scallions">
-                                                                    Scallions
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="skittles">
-                                                                    Skittles
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="spinach">
-                                                                    Spinach
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="strawberries">
-                                                                    Strawberries
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="sun dried tomatoes">
-                                                                    Sun Dried Tomatoes
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="sweet corn">
-                                                                    Sweet Corn
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="walnut">
-                                                                    Walnut
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="watercress">
-                                                                    Watercress
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="yellow peppers">
-                                                                    Yellow peppers
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="yellow squash">
-                                                                    Yellow squash
-                                                                </label>
-                                                                <br>
-                                                                <label class="checkbox">
-                                                                    <input type="checkbox" value="zucchini">
-                                                                    Zucchini
-                                                                </label>
-                                                                <br>
+                                                    </header>
+                                                    <div class="card-content nonMeatTopng ">
+                                                        <div class="content ">
+                                                            <div class="control ">
+            
+                                                                <!-- First Row (Non-Meats)-->
+                                                                <div class="columns">
+                                                                    <div class="column is-half-mobile">
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="alfalfa sprouts">
+                                                                            Alfalfa Sprouts
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="almonds">
+                                                                            Almonds
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="apple slices">
+                                                                            Apple Slices
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="artichoke hearts">
+                                                                            Artichoke Hearts
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="avocado">
+                                                                            Avocado
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="baby leeks">
+                                                                            Baby Leeks
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="banana">
+                                                                            Banana
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="black beans">
+                                                                            Black Beans
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="blueberries">
+                                                                            Blueberries
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="broccoli">
+                                                                            Broccoli
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="capers">
+                                                                            Capers
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="carrot">
+                                                                            Carrot
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="cherry tomatoes">
+                                                                            Cherry Tomatoes
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="chocolate chips">
+                                                                            Chocolate Chips
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="dried tomatoes">
+                                                                            Dried Tomatoes
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="eggplant">
+                                                                            Eggplant
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="green peppers">
+                                                                            Green Peppers
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="kalamata olives">
+                                                                            Kalamata Olives
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="lettuce">
+                                                                            Lettuce
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="marshmallow">
+                                                                            Marshmallow
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="m&ms">
+                                                                            M&M’s
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="mushrooms">
+                                                                            Mushrooms
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="onions">
+                                                                            Onions
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="olives">
+                                                                            Olives
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="oreo crumbles">
+                                                                            Oreo Crumbles
+                                                                        </label>
+                                                                        <br>
+                                                                        <label class="checkbox">
+                                                                            <input type="checkbox" value="peanut butter chips">
+                                                                            Peanut Butter Chips
+                                                                        </label>
+                                                                        <br>
+                                                                    </div>
+            
+            
+                                                                    <!-- Second Row (Non-Meats)-->
+                                                                    
+                                                                        <div class="column is-half-mobile">
+                                                                            <!-- <br> -->
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="peanuts">
+                                                                                Peanuts
+                                                                            </label>
+                                                                            <br>
+                                                                                <label class="checkbox">
+                                                                                    <input type="checkbox" value="peas">
+                                                                                    Peas
+                                                                                </label>
+                                                                                <br>
+                                                                                <label class="checkbox">
+                                                                                    <input type="checkbox" value="pistachio">
+                                                                                    Pistachio
+                                                                                </label>
+                                                                                <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="portobello mushrooms">
+                                                                                Portobello Mushrooms
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="red beans">
+                                                                                Red beans
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="red onions">
+                                                                                Red onions
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="red peppers">
+                                                                                Red peppers
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="reeses cups">
+                                                                                Reese's Peanut Butter Cups
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="roasted garlic">
+                                                                                Roasted Garlic
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="scallions">
+                                                                                Scallions
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="skittles">
+                                                                                Skittles
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="spinach">
+                                                                                Spinach
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="strawberries">
+                                                                                Strawberries
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="sun dried tomatoes">
+                                                                                Sun Dried Tomatoes
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="sweet corn">
+                                                                                Sweet Corn
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="walnut">
+                                                                                Walnut
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="watercress">
+                                                                                Watercress
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="yellow peppers">
+                                                                                Yellow peppers
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="yellow squash">
+                                                                                Yellow squash
+                                                                            </label>
+                                                                            <br>
+                                                                            <label class="checkbox">
+                                                                                <input type="checkbox" value="zucchini">
+                                                                                Zucchini
+                                                                            </label>
+                                                                            <br>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- CONFIRM ORDER BUTTON-->
+                                    <br>
+                                    <div class="has-text-centered">
+                                        <button class="button headerText header has-background-danger is-size-3 reviewBtn" type="submit"><strong>Review Your Order &nbsp; </strong><i
+                                                class="fas fa-arrow-right"></i></button>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- CONFIRM ORDER BUTTON-->
-                        <br>
-                        <div class="has-text-centered">
-                            <button class="button" type="submit"><strong>Review Your Order &nbsp; </strong><i
-                                    class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                    <br>
+                                <br>
+            
+                </section>
+                <link rel="stylesheet" href="style.css">
+                <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+                <script type="text/javascript">
+                    $(":checkbox").change(function() {
+                        if(this.checked) {
+                            console.log(this.value);
+                        }
+                    });
+                </script>
+            </body>
+            
+        </div>
 
-    </section>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script type="text/javascript">
-        $(":checkbox").change(function() {
-            if(this.checked) {
-                console.log(this.value);
-            }
-        });
-    </script>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>

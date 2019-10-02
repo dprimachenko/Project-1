@@ -1,32 +1,75 @@
 
 
 .meatTpng {
-    padding-left: 100px;
+    padding-left: 140px;
+    font-weight: bold;
 }
 
 .nonMeatTopng {
-    padding-left: 80px; 
-    padding-right: 40px;
+    padding-left: 130px; 
+    font-weight: bold;
     
 }
 
 .meatContainer {
-    height: 100%;
+    height: 750px;
 }
 
 .nonMeatContainer {
-    height: 100%;
+    height: 750px;
 }
 
 .crustContainer {
     height: 250px;
+ 
 }
 
 .cheeseContainer {
     height: 250px;
+
 }
 
 .sauceContainer {
     height: 250px;
 }
 
+.sizeContent {
+    font-weight: bold;
+}
+
+.crustContent {
+    padding-left: 150px;
+    font-weight: bold;
+}
+
+.cheeseContent {
+    padding-left: 130px;
+    font-weight: bold;
+
+}
+
+.sauceContent {
+    padding-left: 150px;
+    font-weight: bold;
+}
+
+.toppingBtn {
+    border: none;
+}
+
+.reviewBtn{
+    border: none;
+}
+
+.header {
+   color: #F4FA58;
+}
+
+
+.headerText {
+    font-family: 'Mansalva', cursive;
+}
+
+.pizzaBackground {
+    height: 1200px
+}
