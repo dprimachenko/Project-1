@@ -67,7 +67,12 @@
     </nav>
 
     <!-- Navbar End -->
-
+    <div class="container" style="padding-top: 5px; padding-bottom: 5px;">
+        <div class="notification is-danger">
+            <button class="delete"></button>
+            Email is <strong>NOT</strong> Valid. Please enter another one.
+        </div>
+    </div>
     <div class="card container">
         <div class="card-image">
             <figure class="image is-2by1">
@@ -89,20 +94,19 @@
                             <div class="field">
                                 <label class="label">Full Name</label>
                                 <div class="control">
-                                    <input class="input is-danger" type="text" placeholder="e.g Alex Smith">
+                                    <input id="name" class="input is-danger" type="text" placeholder="e.g Alex Smith">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Email</label>
                                 <div class="control">
-                                    <input class="input is-danger" type="email" placeholder="e.g. alexsmith@gmail.com">
+                                    <input id="email" class="input is-danger" type="email" placeholder="e.g. alexsmith@gmail.com">
                                 </div>
                             </div>
 
                             <div>
-                                <a class="button is-medium is-normal is-danger" href="./menu1.html">CONTINUE FOR PIZZA OPTIONS</a>
-
+                                <button class="button headerText header has-background-danger is-size-3 pizzaBtn" type="submit" id="validate"><strong>CONTINUE FOR PIZZA OPTIONS &nbsp; </strong><i class="fas fa-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -116,6 +120,45 @@
 
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript">
+        $(".notification").css('display','none');
+        document.addEventListener('DOMContentLoaded', () => {
+            (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+                $notification = $delete.parentNode;
+                $delete.addEventListener('click', () => {
+                    $notification.parentNode.removeChild($notification);
+                });
+            });
+        });
+
+        $("#validate").on("click",function(){
+            let email = $("#email").val();
+            let settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://pozzad-email-validator.p.rapidapi.com/emailvalidator/validateEmail/"+email,
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "pozzad-email-validator.p.rapidapi.com",
+                    "x-rapidapi-key": "6f16f230aemsh31b9ddf6fefd32fp16bb58jsned0ecf0fe85c"
+                }
+            }
+
+            $.ajax(settings).done(function (response) {
+                $("#email").val('');
+                if (response.isValid) {
+                    window.location='./menu1.html';
+                }
+                else {
+                    $(".notification").show();
+                    $("#email").val('');
+                    $("#name").val('');
+                }
+            });
+        });
+  </script>
 </body>
 
 </html>
