@@ -78,7 +78,20 @@
     height: 1200px
 }
 
+@media only screen and (max-width: 1200px) {
+    .meatTpng {
+        padding-left:70px;
+    }
 
+    .nonMeatTopng {
+        padding-left: 70px; 
+    }
+    .mainTitle {
+        position: relative;
+    left: -189px;
+    }
+
+}
 @media only screen and (max-width: 950px) {
 
     
@@ -115,21 +128,23 @@
         font-size: 25px !important;
      }
 
-
     .meatTpng {
         padding-left: 50px;
     }
     
     .nonMeatTopng {
         padding-left: 50px; 
-  
     }
+   
     
   }
 
   @media only screen and (max-width: 768px) {
 
-    
+    .column {
+        padding: 0px !important;
+    }
+
     .sauceContent {
         padding-left: 225px;  
      
@@ -163,24 +178,33 @@
         font-size: 25px !important;
      }
      .meatContainer {
-        height: 750px;
+        height: 475px;
     }
     
     .nonMeatContainer {
-        height: 750px;
+        height: 700px;
     }
     .meatTpng {
-        padding-left: 235px;
+        padding-left: 125px;
+        column-count: 2;
     }
     
     .nonMeatTopng {
-        padding-left: 30px; 
+        padding-left: 100px; 
         column-count: 2;
+        column-gap: 0x;
+    }
+    .nonMeatInline {
+        display: inline;
     }
   }
   
 
   @media only screen and (max-width: 400px) {
+
+    .column {
+        padding: 0px !important;
+    }
     .sizeChoices {
         text-align: left !important;
         padding-left: 40px;
@@ -211,26 +235,47 @@
     }
 
     .pizzaBackground {
-        height: 1300px;
+        display: none;
     }
     .header {
         text-align:center;
      }
      .meatContainer {
         height: 750px;
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
     
     .nonMeatContainer {
-        height: 750px;
+        height: 1225px;
     }
     .meatTpng {
-        padding-left: 140px;
-        font-weight: bold;
+        padding-left: 100px;
+        column-count: 1;
+        display: inline-block;
     }
     
     .nonMeatTopng {
-        padding-left: 130px; 
-        font-weight: bold;
+        padding-left: 90px; 
+        column-count: 1;
+        padding-top: 40px !important;
+    }
+
+    .reviewBtn {
+        font-size: 22px !important;
+    }
+
+    .pizzaBtn {
+        font-size: 22px !important;
+    }
+    .toppingsContainer {
+        margin-top: -65px;
+        width: 130%;
+        margin-left: -40px;
+        height: 110%;
+    }
+    .cardContainer {
+        background-color: yellow !important;
     }
   }
 
