@@ -108,12 +108,22 @@
     }
 
     .pizzaBackground {
-        height: 1300px;
+        height: 1150px;
     }
     .header {
         text-align:center;
         font-size: 25px !important;
      }
+
+
+    .meatTpng {
+        padding-left: 50px;
+    }
+    
+    .nonMeatTopng {
+        padding-left: 50px; 
+  
+    }
     
   }
 
@@ -152,7 +162,21 @@
         text-align:center;
         font-size: 25px !important;
      }
+     .meatContainer {
+        height: 750px;
+    }
     
+    .nonMeatContainer {
+        height: 750px;
+    }
+    .meatTpng {
+        padding-left: 235px;
+    }
+    
+    .nonMeatTopng {
+        padding-left: 30px; 
+        column-count: 2;
+    }
   }
   
 
@@ -192,7 +216,22 @@
     .header {
         text-align:center;
      }
+     .meatContainer {
+        height: 750px;
+    }
     
+    .nonMeatContainer {
+        height: 750px;
+    }
+    .meatTpng {
+        padding-left: 140px;
+        font-weight: bold;
+    }
+    
+    .nonMeatTopng {
+        padding-left: 130px; 
+        font-weight: bold;
+    }
   }
 
  
