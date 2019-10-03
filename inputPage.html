@@ -36,7 +36,7 @@
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
 
-                <a class="navbar-item" href="./landingPage.html">
+                <a class="navbar-item" href="./index.html">
                     Home
                 </a>
 
@@ -96,6 +96,7 @@
                                 <div class="control">
                                     <input id="name" class="input is-danger" type="text" placeholder="e.g Alex Smith">
                                 </div>
+                                <p id="nameBlank" class="help is-danger">Cannot leave this field blank</p>
                             </div>
 
                             <div class="field">
@@ -103,6 +104,7 @@
                                 <div class="control">
                                     <input id="email" class="input is-danger" type="email" placeholder="e.g. alexsmith@gmail.com">
                                 </div>
+                                <p id="emailBlank" class="help is-danger">Cannot leave this field blank</p>
                             </div>
 
                             <div>
@@ -123,6 +125,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript">
+        $("#emailBlank").hide();
+        $("#nameBlank").css('display','none');
         $(".notification").css('display','none');
         document.addEventListener('DOMContentLoaded', () => {
             (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
@@ -134,29 +138,39 @@
         });
 
         $("#validate").on("click",function(){
-            let email = $("#email").val();
-            let settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://pozzad-email-validator.p.rapidapi.com/emailvalidator/validateEmail/"+email,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "pozzad-email-validator.p.rapidapi.com",
-                    "x-rapidapi-key": "6f16f230aemsh31b9ddf6fefd32fp16bb58jsned0ecf0fe85c"
-                }
+            if ($("#email").val() == '') {
+                $("#emailBlank").show();
             }
+            if ($("#name").val() == '') {
+                $("#nameBlank").show();
+            }
+            let email = $("#email").val();
+            if (email) {
+                let settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://pozzad-email-validator.p.rapidapi.com/emailvalidator/validateEmail/"+email,
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-host": "pozzad-email-validator.p.rapidapi.com",
+                        "x-rapidapi-key": "6f16f230aemsh31b9ddf6fefd32fp16bb58jsned0ecf0fe85c"
+                    }
+                }
 
-            $.ajax(settings).done(function (response) {
-                $("#email").val('');
-                if (response.isValid) {
-                    window.location='./menu1.html';
-                }
-                else {
-                    $(".notification").show();
+                $.ajax(settings).done(function (response) {
                     $("#email").val('');
-                    $("#name").val('');
-                }
-            });
+                    if (response.isValid) {
+                        window.location='./menu1.html';
+                    }
+                    else {
+                        $(".notification").show();
+                        $("#emailBlank").hide();
+                        $("#nameBlank").css('display','none');
+                        $("#email").val('');
+                        $("#name").val('');
+                    }
+                });
+            }
         });
   </script>
 </body>
