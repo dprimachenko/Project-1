@@ -19,6 +19,11 @@
     height: 750px;
 }
 
+
+.crustContent {
+    padding-left: 150px;
+    font-weight: bold;
+}
 .crustContainer {
     height: 250px;
  
@@ -37,10 +42,6 @@
     font-weight: bold;
 }
 
-.crustContent {
-    padding-left: 150px;
-    font-weight: bold;
-}
 
 .cheeseContent {
     padding-left: 130px;
@@ -65,6 +66,9 @@
    color: #F4FA58;
 }
 
+.navBarTab {
+    color: #F4FA58;
+}
 
 .headerText {
     font-family: 'Mansalva', cursive;
@@ -73,3 +77,161 @@
 .pizzaBackground {
     height: 1200px
 }
+
+
+@media only screen and (max-width: 950px) {
+
+    
+    .sauceContent {
+        padding-left: 50px;  
+        padding-bottom: 10px
+    }
+    .sauceContainer {
+        height: 225px;
+    }
+
+    .cheeseContent {
+        padding-left: 40px;
+    }
+    .cheeseContainer {
+        height: 225px;
+    }
+    .crustContent {
+        padding-left: 10px;
+    }
+    .crustContainer {
+        height: 225px;
+    }
+    
+    .fa-circle {
+        display:inline;
+    }
+
+    .pizzaBackground {
+        height: 1150px;
+    }
+    .header {
+        text-align:center;
+        font-size: 25px !important;
+     }
+
+
+    .meatTpng {
+        padding-left: 50px;
+    }
+    
+    .nonMeatTopng {
+        padding-left: 50px; 
+  
+    }
+    
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    
+    .sauceContent {
+        padding-left: 225px;  
+     
+    }
+    .sauceContainer {
+        height: 225px;
+    }
+
+    .cheeseContent {
+        padding-left: 225px;
+    }
+    .cheeseContainer {
+        height: 225px;
+    }
+    .crustContent {
+        padding-left: 225px;
+    }
+    .crustContainer {
+        height: 225px;
+    }
+    
+    .fa-circle {
+        display:none;
+    }
+
+    .pizzaBackground {
+        height: 1300px;
+    }
+    .header {
+        text-align:center;
+        font-size: 25px !important;
+     }
+     .meatContainer {
+        height: 750px;
+    }
+    
+    .nonMeatContainer {
+        height: 750px;
+    }
+    .meatTpng {
+        padding-left: 235px;
+    }
+    
+    .nonMeatTopng {
+        padding-left: 30px; 
+        column-count: 2;
+    }
+  }
+  
+
+  @media only screen and (max-width: 400px) {
+    .sizeChoices {
+        text-align: left !important;
+        padding-left: 40px;
+    }
+    
+    .sauceContent {
+        padding-left: 50px;  
+    }
+    .sauceContainer {
+        height: 275px;
+    }
+
+    .cheeseContent {
+        padding-left: 40px;
+    }
+    .cheeseContainer {
+        height: 230px;
+    }
+    .crustContent {
+        padding-left: 40px;
+    }
+    .crustContainer {
+        height: 210px;
+    }
+    
+    .fa-circle {
+        display:none;
+    }
+
+    .pizzaBackground {
+        height: 1300px;
+    }
+    .header {
+        text-align:center;
+     }
+     .meatContainer {
+        height: 750px;
+    }
+    
+    .nonMeatContainer {
+        height: 750px;
+    }
+    .meatTpng {
+        padding-left: 140px;
+        font-weight: bold;
+    }
+    
+    .nonMeatTopng {
+        padding-left: 130px; 
+        font-weight: bold;
+    }
+  }
+
+ 
