@@ -58,6 +58,10 @@
     border: none;
 }
 
+.cancelBtn {
+    border: none;
+}
+
 .reviewBtn{
     border: none;
 }
@@ -205,6 +209,8 @@
     .column {
         padding: 0px !important;
     }
+
+
     .sizeChoices {
         text-align: left !important;
         padding-left: 40px;
@@ -212,31 +218,42 @@
     
     .sauceContent {
         padding-left: 50px;  
+
+
     }
     .sauceContainer {
-        height: 275px;
+        height: 225px;
+        margin-top: 10px;
+        margin-bottom: 30px;
     }
 
     .cheeseContent {
         padding-left: 40px;
     }
     .cheeseContainer {
+        margin-top: 10px;
         height: 230px;
     }
     .crustContent {
         padding-left: 40px;
+        
     }
     .crustContainer {
         height: 210px;
+        
     }
     
     .fa-circle {
         display:none;
     }
-
+    
     .pizzaBackground {
         display: none;
     }
+    .pizzaBackground1 {
+        display: block;
+    }
+    
     .header {
         text-align:center;
      }
@@ -274,9 +291,17 @@
         margin-left: -40px;
         height: 110%;
     }
-    .cardContainer {
-        background-color: yellow !important;
+
+    .sizeContainer {
+        margin-top: -55px;
+        height: 225px;
     }
+
+    .toppingBtn {
+        margin-top: 10px;
+    }
+
+    
   }
 
  
