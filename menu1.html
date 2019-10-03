@@ -48,13 +48,10 @@
                     Menu
                 </a>
 
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
+                <a class="navbar-item">
+                    Confirmation
+                </a>
+
                 <p class="navbar-item"></p>
                 <p class="navbar-item"></p>
                 <p class="navbar-item is-size-1 has-text-weight-bold headerText">
@@ -77,9 +74,10 @@
         </div>
         <div class="card-content is-overlay has-text-light">
             <span class="is-size2 has-text-weight-bold"></span>
+
             <body>
                 <section class="section">
-                    
+
                     <!-- PIZZA SIZE -->
                     <div class="container">
                         <div class="card">
@@ -87,9 +85,9 @@
                                 <p class="card-header-title is-centered is-size-3 headerText header">
                                     How BIG do you want it?
                                 </p>
-                                
+
                             </header>
-            
+
                             <div class="card-content  ">
                                 <div class="content sizeContent ">
                                     <div class="control has-text-centered sizeChoices">
@@ -97,12 +95,12 @@
                                             <input type="radio" name="size choice" id="small">
                                             Small (12") <i class="far fa-circle fa-5x"></i>&nbsp;
                                         </label>
-            
+
                                         <label class="radio">
                                             <input type="radio" name="size choice" id="medium">
                                             Medium (14") <i class="far fa-circle fa-6x"></i>&nbsp;
                                         </label>
-            
+
                                         <label class="radio">
                                             <input type="radio" name="size choice" id="large">
                                             Large (18") <i class="far fa-circle fa-7x"></i>
@@ -114,8 +112,8 @@
                         </div>
                     </div>
                     <br>
-            
-            
+
+
                     <!-- CRUST -->
                     <div class="columns">
                         <div class="column">
@@ -125,12 +123,12 @@
                                         <p class="card-header-title is-centered is-size-3 headerText header">
                                             Crust
                                         </p>
-                                        
+
                                     </header>
                                     <div class="card-content  ">
                                         <div class="content crustContent ">
                                             <div class="control has-text-left">
-                                                
+
                                                 <!--CRUST CHOICES-->
                                                 <label class="radio">
                                                     <input type="radio" name="crust choice" id="thin">
@@ -158,8 +156,8 @@
                                 </div>
                             </div>
                         </div>
-                       
-                       
+
+
                         <!-- CHEESE -->
                         <div class="column">
                             <div class="container">
@@ -168,13 +166,13 @@
                                         <p class="card-header-title is-centered is-size-3 headerText header">
                                             How cheesy? &nbsp; <i class="fas fa-cheese fa-2x"></i>
                                         </p>
-                                       
+
                                     </header>
                                     <div class="card-content ">
                                         <div class="content cheeseContent ">
                                             <div class="control has-text-left">
-                                                
-                                                
+
+
                                                 <!--CHEESE CHOICES-->
                                                 <label class="radio">
                                                     <input type="radio" name="cheese choice" id="no-cheese">
@@ -202,8 +200,8 @@
                                 </div>
                             </div>
                         </div>
-                        
-                       <!--SAUCE -->
+
+                        <!--SAUCE -->
                         <div class="column">
                             <div class="container">
                                 <div class="card sauceContainer">
@@ -211,7 +209,7 @@
                                         <p class="card-header-title is-centered is-size-3 headerText header">
                                             Choose Your Sauce!
                                         </p>
-                                      
+
                                     </header>
                                     <div class="card-content  ">
                                         <div class="content sauceContent ">
@@ -250,11 +248,15 @@
                         </div>
                     </div>
                     <div class="has-text-centered">
-                        <button class="button headerText header has-background-danger is-size-3 pizzaBtn" type="submit" onclick="window.open('index.html', '_self')"><i class="fas fa-window-close"></i><strong>Cancel Order &nbsp; </strong></button>
-                        <button class="button toppingBtn has-background-danger headerText header is-size-4" type="submit" onclick="window.open('menu2.html', '_self')"><strong>Pick Your Toppings &nbsp; </strong><i class="fas fa-arrow-right"></i></button>
+                        <button class="button headerText header has-background-danger is-size-3 pizzaBtn" type="submit"
+                            onclick="window.open('index.html', '_self')"><i
+                                class="fas fa-window-close"></i><strong>Cancel Order &nbsp; </strong></button>
+                        <button class="button toppingBtn has-background-danger headerText header is-size-4"
+                            type="submit" onclick="window.open('menu2.html', '_self')"><strong>Pick Your Toppings &nbsp;
+                            </strong><i class="fas fa-arrow-right"></i></button>
                     </div>
                     <br>
-            
+
                 </section>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -263,58 +265,87 @@
                     let cheese;
                     let crust;
                     let size;
-                    $(document).ready(function(){
+                    $(document).ready(function () {
                         let savedSauce = localStorage.getItem("sauce");
                         sauce = savedSauce;
-                        $("#"+savedSauce).prop("checked", true);
+                        $("#" + savedSauce).prop("checked", true);
                         let savedCheese = localStorage.getItem("cheese");
                         cheese = savedCheese;
-                        $("#"+savedCheese).prop("checked", true);
+                        $("#" + savedCheese).prop("checked", true);
                         let savedCrust = localStorage.getItem("crust");
                         crust = savedCrust;
-                        $("#"+savedCrust).prop("checked", true);
+                        $("#" + savedCrust).prop("checked", true);
                         let savedSize = localStorage.getItem("size");
                         size = savedSize;
-                        $("#"+savedSize).prop("checked", true);
+                        $("#" + savedSize).prop("checked", true);
                     });
                     // $(":radio").change(function() {
                     //     if(this.checked) {
                     //         console.log(this.id);
                     //     }
                     // });
-                    $("input[name='sauce choice']").change(function() {
+                    $("input[name='sauce choice']").change(function () {
                         if (this.checked) {
                             sauce = this.id;
                             console.log(sauce);
                         }
                     });
-                    $("input[name='cheese choice']").change(function() {
+                    $("input[name='cheese choice']").change(function () {
                         if (this.checked) {
                             cheese = this.id;
                             console.log(cheese);
                         }
                     });
-                    $("input[name='crust choice']").change(function() {
+                    $("input[name='crust choice']").change(function () {
                         if (this.checked) {
                             crust = this.id;
                             console.log(crust);
                         }
                     });
-                    $("input[name='size choice']").change(function() {
+                    $("input[name='size choice']").change(function () {
                         if (this.checked) {
                             size = this.id;
                             console.log(size);
                         }
                     });
-                    $(".toppingBtn").on("click",function(){
-                        localStorage.setItem("size",size);
-                        localStorage.setItem("crust",crust);
-                        localStorage.setItem("cheese",cheese);
-                        localStorage.setItem("sauce",sauce);
+                    $(".toppingBtn").on("click", function () {
+                        localStorage.setItem("size", size);
+                        localStorage.setItem("crust", crust);
+                        localStorage.setItem("cheese", cheese);
+                        localStorage.setItem("sauce", sauce);
                     });
+
+                    //  Display navbar items when collapsed 
+
+                    document.addEventListener('DOMContentLoaded', () => {
+
+                        // Get all "navbar-burger" elements
+                        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+                        // Check if there are any navbar burgers
+                        if ($navbarBurgers.length > 0) {
+
+                            // Add a click event on each of them
+                            $navbarBurgers.forEach(el => {
+                                el.addEventListener('click', () => {
+
+                                    // Get the target from the "data-target" attribute
+                                    const target = el.dataset.target;
+                                    const $target = document.getElementById(target);
+
+                                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                                    el.classList.toggle('is-active');
+                                    $target.classList.toggle('is-active');
+
+                                });
+                            });
+                        }
+
+                    });
+
                 </script>
             </body>
-            
+
         </div>
 
     </div>
