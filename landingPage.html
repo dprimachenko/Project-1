@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel='icon' href='Pizzacon.ico' type='image/x-icon' />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+
     <title>Eat Our Pizza Pizzeria</title>
 </head>
 
@@ -46,16 +49,15 @@
                     Menu
                 </a>
 
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item is-size-3 has-text-weight-bold">
+                <a class="navbar-item">
+                    Order Progress
+                </a>
+
+                <a class="navbar-item">
+                    Confirmation
+                </a>
+
+                <p class="navbar-item is-size-1 has-text-weight-bold headerText">
                     Eat Our Pizza Pizzeria
                 </p>
 
@@ -75,22 +77,43 @@
         </div>
         <div class="card-content is-overlay has-text-light">
             <span class="is-size2 has-text-weight-bold"></span>
-           
-            </body>
-            
-        </div>
 
-    </div>
+</body>
 
+</div>
 
+</div>
 
+<!-- Display navbar items when collapsed -->
+<script>
 
+    document.addEventListener('DOMContentLoaded', () => {
 
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
 
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
 
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
 
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
 
+                });
+            });
+        }
+
+    });
+
+</script>
 
 </body>
 
