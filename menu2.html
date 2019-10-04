@@ -529,8 +529,9 @@
                     let meat = [];
                     let nonMeat = [];
                     $(document).ready(function(){
-                        let savedMeat = JSON.parse(localStorage.getItem("meat"));
-                        let savedNonMeat = JSON.parse(localStorage.getItem("nonMeat"));
+                        let order = JSON.parse(localStorage.getItem("order"));
+                        let savedMeat = order.meat;
+                        let savedNonMeat = order.nonMeat;
                         if (savedMeat != null) {
                             meat = savedMeat;
                             for (let i = 0; i < savedMeat.length; i++) {
@@ -573,10 +574,15 @@
                         }
                     });
                     $("button").on("click",function(){
-                        localStorage.setItem("meat",JSON.stringify(meat));
-                        localStorage.setItem("nonMeat",JSON.stringify(nonMeat));
-                        let date = new Date(Date.now());
-                        localStorage.setItem("timeStamp",date);
+                        let order = JSON.parse(localStorage.getItem("order"));
+                        // localStorage.setItem("meat",JSON.stringify(meat));
+                        // localStorage.setItem("nonMeat",JSON.stringify(nonMeat));
+                        let date = new Date();
+                        order.timeStamp = date;
+                        order.meat = meat;
+                        order.nonMeat = nonMeat;
+                        // localStorage.setItem("timeStamp",date);
+                        localStorage.setItem("order",JSON.stringify(order));
                     });
                 </script>
             </body>

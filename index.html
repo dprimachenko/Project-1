@@ -130,7 +130,26 @@
         }
 
     });
-
+    if (localStorage.getItem("order") == null) {
+        let order = {
+            name: "",
+            email: "",
+            pizzaOptions: {
+                size: "",
+                crust: "",
+                sauce: "",
+                cheese: ""
+            },
+            meat: [],
+            nonMeat: [],
+            timeStamp: "",
+            origin: "",
+            destination: "",
+            time: "",
+            distance: ""
+        };
+        localStorage.setItem("order",JSON.stringify(order));
+    }
 </script>
 
 </body>

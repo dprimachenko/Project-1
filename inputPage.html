@@ -157,8 +157,12 @@
                 $.ajax(settings).done(function (response) {
                     $("#email").val('');
                     if (response.isValid) {
-                        localStorage.setItem("name",name);
-                        localStorage.setItem("email",email);
+                        let order = JSON.parse(localStorage.getItem("order"));
+                        order.name = name;
+                        order.email = email;
+                        localStorage.setItem("order",JSON.stringify(order));
+                        // localStorage.setItem("name",name);
+                        // localStorage.setItem("email",email);
                         window.location='./menu1.html';
                     }
                     else {

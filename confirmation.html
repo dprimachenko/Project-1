@@ -15,12 +15,13 @@
     <style type="text/css">
         #map {
             position: absolute;
-            margin-top: 20%;
+            margin-top: 50%;
             width:100%;
             height:60%;
             display: block;
             margin-left: auto;
             margin-right: auto;
+            top: 454px;
         }
     </style>
 </head>
@@ -197,23 +198,28 @@
             function callback(response, status) {
                 if (status == 'OK') {
                     let time = response.rows[0].elements[0].duration_in_traffic.text;
-                    let date = localStorage.getItem("timeStamp");
-                    let meat = JSON.parse(localStorage.getItem("meat"));
-                    let nonMeat = JSON.parse(localStorage.getItem("nonMeat"));
-                    
-                    localStorage.setItem("destination",response.destinationAddresses[0]);
-                    localStorage.setItem("origin",response.originAddresses[0]);
-                    localStorage.setItem("distance",response.rows[0].elements[0].distance.text);
-                    localStorage.setItem("time", time+" plus 20 mins to make pizza");
+                    let order = JSON.parse(localStorage.getItem("order"));
+                    let date = order.timeStamp;
+                    console.log(date);
+                    let meat = order.meat;
+                    let nonMeat = order.nonMeat;
+                    order.destination = response.destinationAddresses[0];
+                    order.origin = response.originAddresses[0];
+                    order.distance = response.rows[0].elements[0].distance.text;
+                    order.time = time+" plus 20 mins to make pizza";
+                    // localStorage.setItem("destination",response.destinationAddresses[0]);
+                    // localStorage.setItem("origin",response.originAddresses[0]);
+                    // localStorage.setItem("distance",response.rows[0].elements[0].distance.text);
+                    // localStorage.setItem("time", time+" plus 20 mins to make pizza");
                     $("#container").append("<div>").attr({"class":"has-background-danger has-text-white has-text-centered","id":"results"});
                     $("#results").append("<p>Time of Order Recieved: "+date+"</p>");
-                    $("#results").append("<p>Order under Name: "+localStorage.getItem("name")+"</p>");
-                    $("#results").append("<p>Email Address: "+localStorage.getItem("email")+"</p>");
+                    $("#results").append("<p>Order under Name: "+order.name+"</p>");
+                    $("#results").append("<p>Email Address: "+order.email+"</p>");
                     $("#results").append("<h4>Pizza Details</h4>");
-                    $("#results").append("<p>Size: "+localStorage.getItem("size")+"</p>");
-                    $("#results").append("<p>Crust: "+localStorage.getItem("crust")+"</p>");
-                    $("#results").append("<p>Cheese: "+localStorage.getItem("cheese")+"</p>");
-                    $("#results").append("<p>Sauce: "+localStorage.getItem("sauce")+"</p>");
+                    $("#results").append("<p>Size: "+order.pizzaOptions.size+"</p>");
+                    $("#results").append("<p>Crust: "+order.pizzaOptions.crust+"</p>");
+                    $("#results").append("<p>Cheese: "+order.pizzaOptions.cheese+"</p>");
+                    $("#results").append("<p>Sauce: "+order.pizzaOptions.sauce+"</p>");
                     $("#results").append("<h4>Toppings</h4>");
                     $("#results").append("<p>Meat</p>").attr("style","font-weight: bold;");
                     for (let i = 0; i < meat.length; i++) {
@@ -224,10 +230,11 @@
                         $("#results").append("<span>&#8226;</span>"+nonMeat[i]);
                     }
                     $("#results").append("<h4>Delivery Information</h4>");
-                    $("#results").append("<p>Destination is "+localStorage.getItem("destination")+"</p>");
-                    $("#results").append("<p>Origin is "+localStorage.getItem("origin")+"</p>");
-                    $("#results").append("<p>Distance from Pizzaria is "+localStorage.getItem("distance")+"</p>");
-                    $("#results").append("<p>Estimated travel time is "+localStorage.getItem("time")+"</p>");
+                    $("#results").append("<p>Destination is "+order.destination+"</p>");
+                    $("#results").append("<p>Origin is "+order.origin+"</p>");
+                    $("#results").append("<p>Distance from Pizzaria is "+order.distance+"</p>");
+                    $("#results").append("<p>Estimated travel time is "+order.time+"</p>");
+                    localStorage.setItem("order",JSON.stringify(order));
                 }
             }
         }

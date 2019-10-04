@@ -266,16 +266,17 @@
                     let crust;
                     let size;
                     $(document).ready(function () {
-                        let savedSauce = localStorage.getItem("sauce");
+                        let order = JSON.parse(localStorage.getItem("order"));
+                        let savedSauce = order.pizzaOptions.sauce;
                         sauce = savedSauce;
                         $("#" + savedSauce).prop("checked", true);
-                        let savedCheese = localStorage.getItem("cheese");
+                        let savedCheese = order.pizzaOptions.cheese;
                         cheese = savedCheese;
                         $("#" + savedCheese).prop("checked", true);
-                        let savedCrust = localStorage.getItem("crust");
+                        let savedCrust = order.pizzaOptions.crust;
                         crust = savedCrust;
                         $("#" + savedCrust).prop("checked", true);
-                        let savedSize = localStorage.getItem("size");
+                        let savedSize = order.pizzaOptions.size;
                         size = savedSize;
                         $("#" + savedSize).prop("checked", true);
                     });
@@ -309,10 +310,16 @@
                         }
                     });
                     $(".toppingBtn").on("click", function () {
-                        localStorage.setItem("size", size);
-                        localStorage.setItem("crust", crust);
-                        localStorage.setItem("cheese", cheese);
-                        localStorage.setItem("sauce", sauce);
+                        let order = JSON.parse(localStorage.getItem("order"));
+                        order.pizzaOptions.size = size;
+                        order.pizzaOptions.crust = crust;
+                        order.pizzaOptions.cheese = cheese;
+                        order.pizzaOptions.sauce = sauce;
+                        localStorage.setItem("order",JSON.stringify(order));
+                        // localStorage.setItem("size", size);
+                        // localStorage.setItem("crust", crust);
+                        // localStorage.setItem("cheese", cheese);
+                        // localStorage.setItem("sauce", sauce);
                     });
 
                     //  Display navbar items when collapsed 
