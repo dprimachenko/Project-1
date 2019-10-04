@@ -233,6 +233,16 @@
     .nonMeatInline {
         display: inline;
     }
+
+    .orderNowBtn {
+        margin-left: 150px !important;
+    }
+    .meatMnuCont {
+        height: 450px;
+    }
+    .pizzaImageMainMenu {
+        height: 2000px;
+    }
   }
   
 
@@ -374,4 +384,4 @@
 .orderNowBtn {
     margin-left: -10px !important;
 }
- 
+}
