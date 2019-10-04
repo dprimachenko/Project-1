@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
     <title>Eat Our Pizza Pizzeria</title>
+    <style type="text/css">
+        #map {
+            position: absolute;
+            margin-top: 20%;
+            width:100%;
+            height:60%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,19 +47,19 @@
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="./index.html">
                     Home
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="./inputPage.html">
                     Order Online
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="./menuMain.html">
                     Menu
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="./confirmation.html">
                     Confirmation
                 </a>
 
@@ -69,7 +80,7 @@
     <div class="card container">
         <div class="card-image">
             <figure class="image is-2by1">
-                <img src="https://i.imgur.com/VUEGlFp.jpg" alt="Placeholder image">
+                <img src="https://i.imgur.com/VUEGlFp.jpg" alt="Placeholder image" style="height: 150%">
             </figure>
         </div>
         <div class="card-content is-overlay has-text-light">
@@ -92,7 +103,7 @@
                         <div class="content">
                             <div class="columns is-centered">
                                 <div class="column is-three-fifths">
-
+                                    <div id="container" style=""></div>
                                     <div class="field has-text-weight-bold is-size-2">
                                         <p>Thank you for your order!</p>
                                     </div>
@@ -105,19 +116,140 @@
                         </div>
                     </div>
 
-
                 </div>
-
             </div>
             <br>
             <!-- card body end -->
 
         </div>
     </div>
-
+    <div id="map"></div>
     <!-- Display navbar items when collapsed -->
+    <script async defer
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBzqA6_qeZKge4y_W1QIGBp4cjqCMi30aQ&callback=initMap">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
+        let map, infoWindow;
+        let current;
+        let mapOptions = {
+            center: {lat: 34.062, lng: -118.446},
+            zoom: 16
+        };
+        function initMap() {
+            let pizzaria = new google.maps.LatLng(34.062, -118.446);
+            let directionsService = new google.maps.DirectionsService();
+            let directionsRenderer = new google.maps.DirectionsRenderer();
+            let info = '"Eat Our Pizza" Pizzaria';
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            infoWindow = new google.maps.InfoWindow;
+            directionsRenderer.setMap(map);
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    let pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    console.log(pos);
+                    let marker = new google.maps.Marker({
+                        position: {
+                            lat: 34.062, lng: -118.446
+                        },
+                        map: map
+                    });
+                    attachSecretMessage(marker, info);
+                    infoWindow.setPosition(pos);
+                    current = new google.maps.LatLng(pos.lat, pos.lng);
+                    infoWindow.setContent('Location found.');
+                    infoWindow.open(map);
+                    map.setCenter(pos);
+                    calcRoute();
+                }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } 
+            else {
+          // If browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+            function calcRoute() {
+                let origin = pizzaria;
+                let destination = current;
+                console.log(current);
+                let service = new google.maps.DistanceMatrixService();
+                let n = Date.now() + 1200000; // 20 minute buffer for pizza making
+                let N = new Date(n);
+                console.log(N);
+                service.getDistanceMatrix(
+                {
+                    origins: [origin],
+                    destinations: [destination],
+                    travelMode: 'DRIVING',
+                    drivingOptions: {
+                        departureTime: N,
+                        trafficModel: 'pessimistic'
+                    },
+                    unitSystem: google.maps.UnitSystem.IMPERIAL,
+                }, callback);
 
+            function callback(response, status) {
+                if (status == 'OK') {
+                    let time = response.rows[0].elements[0].duration_in_traffic.text;
+                    let date = localStorage.getItem("timeStamp");
+                    let meat = JSON.parse(localStorage.getItem("meat"));
+                    let nonMeat = JSON.parse(localStorage.getItem("nonMeat"));
+                    
+                    localStorage.setItem("destination",response.destinationAddresses[0]);
+                    localStorage.setItem("origin",response.originAddresses[0]);
+                    localStorage.setItem("distance",response.rows[0].elements[0].distance.text);
+                    localStorage.setItem("time", time+" plus 20 mins to make pizza");
+                    $("#container").append("<div>").attr({"class":"has-background-danger has-text-white has-text-centered","id":"results"});
+                    $("#results").append("<p>Time of Order Recieved: "+date+"</p>");
+                    $("#results").append("<p>Order under Name: "+localStorage.getItem("name")+"</p>");
+                    $("#results").append("<p>Email Address: "+localStorage.getItem("email")+"</p>");
+                    $("#results").append("<h4>Pizza Details</h4>");
+                    $("#results").append("<p>Size: "+localStorage.getItem("size")+"</p>");
+                    $("#results").append("<p>Crust: "+localStorage.getItem("crust")+"</p>");
+                    $("#results").append("<p>Cheese: "+localStorage.getItem("cheese")+"</p>");
+                    $("#results").append("<p>Sauce: "+localStorage.getItem("sauce")+"</p>");
+                    $("#results").append("<h4>Toppings</h4>");
+                    $("#results").append("<p>Meat</p>").attr("style","font-weight: bold;");
+                    for (let i = 0; i < meat.length; i++) {
+                        $("#results").append("<span>&#8226;</span>"+meat[i]);
+                    }
+                    $("#results").append("<p>Non-Meat</p>").attr("style","font-weight: bold;");
+                    for (let i = 0; i < nonMeat.length; i++) {
+                        $("#results").append("<span>&#8226;</span>"+nonMeat[i]);
+                    }
+                    $("#results").append("<h4>Delivery Information</h4>");
+                    $("#results").append("<p>Destination is "+localStorage.getItem("destination")+"</p>");
+                    $("#results").append("<p>Origin is "+localStorage.getItem("origin")+"</p>");
+                    $("#results").append("<p>Distance from Pizzaria is "+localStorage.getItem("distance")+"</p>");
+                    $("#results").append("<p>Estimated travel time is "+localStorage.getItem("time")+"</p>");
+                }
+            }
+        }
+      }
+
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+      function attachSecretMessage(marker, secretMessage) {
+        let infowindow = new google.maps.InfoWindow({
+          content: secretMessage
+        });
+
+        marker.addListener('click', function() {
+          infowindow.open(marker.get('map'), marker);
+        });
+      }
         document.addEventListener('DOMContentLoaded', () => {
 
             // Get all "navbar-burger" elements

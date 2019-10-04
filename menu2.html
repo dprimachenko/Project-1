@@ -35,28 +35,25 @@
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="./index.html">
                     Home
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="./inputPage.html">
                     Order Online
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="./menuMain.html">
                     Menu
+                </a>
+
+                <a class="navbar-item" href="./confirmation.html">
+                    Confirmation
                 </a>
 
                 <p class="navbar-item"></p>
                 <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item"></p>
-                <p class="navbar-item has-text-weight-bold headerText mainTitle is-size-1">
+                <p class="navbar-item is-size-1 has-text-weight-bold headerText">
                     Eat Our Pizza Pizzeria
                 </p>
 
@@ -518,7 +515,7 @@
                                         <button class="button headerText header has-background-danger is-size-3 pizzaBtn" type="submit" onclick="window.open('menu1.html', '_self')"><i
                                                 class="fas fa-arrow-left"></i><strong>Pizza Options &nbsp; </strong></button>
                                                 <!-- for onclick add html file name in blacnk '' before '_self' -->
-                                        <button class="button headerText header has-background-danger is-size-3 reviewBtn" type="submit" onclick="window.open('', '_self')"><strong>Review Your Order &nbsp; </strong><i
+                                        <button class="button headerText header has-background-danger is-size-3 reviewBtn" type="submit" onclick="window.open('./confirmation.html', '_self')"><strong>Confirm Your Order &nbsp; </strong><i
                                                 class="fas fa-arrow-right"></i></button>
                                     </div>
                                 </div>
@@ -578,6 +575,8 @@
                     $("button").on("click",function(){
                         localStorage.setItem("meat",JSON.stringify(meat));
                         localStorage.setItem("nonMeat",JSON.stringify(nonMeat));
+                        let date = new Date(Date.now());
+                        localStorage.setItem("timeStamp",date);
                     });
                 </script>
             </body>

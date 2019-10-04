@@ -44,15 +44,11 @@
                     Order Online
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="./menuMain.html">
                     Menu
                 </a>
 
-                <a class="navbar-item">
-                    Order Progress
-                </a>
-
-                <a class="navbar-item">
+                <a class="navbar-item" href="./confirmation.html">
                     Confirmation
                 </a>
 
@@ -145,6 +141,7 @@
                 $("#nameBlank").show();
             }
             let email = $("#email").val();
+            let name = $("#name").val();
             if (email) {
                 let settings = {
                     "async": true,
@@ -160,6 +157,8 @@
                 $.ajax(settings).done(function (response) {
                     $("#email").val('');
                     if (response.isValid) {
+                        localStorage.setItem("name",name);
+                        localStorage.setItem("email",email);
                         window.location='./menu1.html';
                     }
                     else {
