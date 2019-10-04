@@ -82,6 +82,35 @@
     height: 1200px
 }
 
+.menuMain
+{height: 500px;
+}
+
+.nonMeatMnuCont {
+    height: 800px;
+}
+
+.meatMnuCont {
+    height: 800px;
+}
+
+.orderNowBtn {
+    margin-left: 500px;
+}
+
+.pizzaImageMainMenu {
+    height: 1400px;
+}
+
+.menuContainer {
+    margin-top:-40px;
+}
+
+.eatPizzaTitle{
+    margin-left: 500px;
+}
+
+
 @media only screen and (max-width: 1200px) {
     .meatTpng {
         padding-left:70px;
@@ -94,6 +123,7 @@
         position: relative;
     left: -189px;
     }
+
 
 }
 @media only screen and (max-width: 950px) {
@@ -139,7 +169,9 @@
     .nonMeatTopng {
         padding-left: 50px; 
     }
-   
+    .orderNowBtn {
+        margin-left: 10px !important;
+    }
     
   }
 
@@ -302,7 +334,44 @@
         margin-top: 10px;
     }
 
+    .crustList {
+        padding-left: 75px;
+        margin-top: -25px;
+    }
+
+    .sauceList {
+        padding-left: 75px;
+        margin-top: -25px;
+    }
     
+    .cheeseList {
+        padding-left: 75px;
+        margin-top: -25px;
+    }
+
+    .meatList {
+        padding-left: 35px;
+        margin-top: -25px;
+  }
+    .nonMeatList {
+        padding-left: 25px;
+        margin-top: -25px;
   }
 
+  .nonMeatMnuCont {
+    height: 1420px;
+    
+}
+
+.meatMnuCont {
+    height: 700px;
+}
+
+.pizzaImageMainMenu {
+    display: none;
+}
+
+.orderNowBtn {
+    margin-left: -10px !important;
+}
  
